@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Ajouter une {{data.name}}. </h1>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="N° Séance" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Date" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Répétitions" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Charge utilisée" >
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Annuler</button>
+  <button mat-button (click)="onNoClick()">Valider</button>
+</div>

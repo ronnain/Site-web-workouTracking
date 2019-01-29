@@ -1,4 +1,44 @@
-    <app-seance></app-seance>
-    <app-seance></app-seance>
-    <app-seance></app-seance>
-    <app-seance></app-seance>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let seance of seances; let i=index;">
+      <app-seance [seance]="seance"></app-seance>
+    </div>
+    <div class=" col-sm-4" >
+      <div style="display: table-cell; vertical-align: middle;">
+        <app-btn-add-seance> </app-btn-add-seance>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!--
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <app-seance></app-seance>
+      </div>
+      <div class="col-sm-4">
+        <app-seance></app-seance>
+      </div>
+      <div class="col-sm-4">
+        <app-seance></app-seance>
+      </div>
+      <div class="w-100"></div>
+      <div class="col-sm-4">
+        <app-seance></app-seance>
+      </div>
+      <div class="col-sm-4">
+        <app-seance></app-seance>
+      </div>
+      <div class=" col-sm-4" >
+        <div style="display: table-cell; vertical-align: middle;">
+          <app-btn-add-seance> </app-btn-add-seance>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  -->

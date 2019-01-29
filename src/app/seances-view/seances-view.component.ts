@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+import{ Seance} from '../models/seance';
+
+import { DonneesAppService } from '../services/donnees-app.service';
 
 @Component({
   selector: 'app-seances-view',
@@ -7,9 +13,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeancesViewComponent implements OnInit {
 
-  constructor() { }
+  seances:Seance[];
 
-  ngOnInit() {
+  constructor(private route: ActivatedRoute,
+  private donneesAppService: DonneesAppService,
+  private location: Location) { }
+
+  ngOnInit(): void {
+    this.getSeances();
+  }
+
+  getSeances(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.seances = this.donneesAppService.getSeancesByIdExercice(id);
+    //console.log(this.seances);
   }
 
 }

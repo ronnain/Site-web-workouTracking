@@ -1,22 +1,6 @@
-<h3>Haut du corps</h3>
+<h3>{{nom}} + id: {{id}}</h3>
 <div class="entrainementContainer">
-    <app-card-exercice></app-card-exercice>
-    <app-card-exercice></app-card-exercice>
-    <app-card-exercice></app-card-exercice>
-    <app-card-exercice></app-card-exercice>
-    <app-card-exercice></app-card-exercice>
-    <app-card-exercice></app-card-exercice>
-    <app-btn-add-exercice></app-btn-add-exercice>
-</div>
-<h3>Bas du corps</h3>
-<div class="entrainementContainer">
-    <app-card-exercice></app-card-exercice>
-    <app-card-exercice></app-card-exercice>
-    <app-card-exercice></app-card-exercice>
-    <app-card-exercice></app-card-exercice>
-    <app-card-exercice></app-card-exercice>
-    <app-card-exercice></app-card-exercice>
-    <app-card-exercice></app-card-exercice>
-    <app-card-exercice></app-card-exercice>
+    <app-card-exercice *ngFor="let exercice of exercices; let i=index;"
+                        [exercice]="exercice"></app-card-exercice>
     <app-btn-add-exercice></app-btn-add-exercice>
 </div>

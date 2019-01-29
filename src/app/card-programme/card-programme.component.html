@@ -2,10 +2,11 @@
   <div class="row">
     <div class="card text-white bg-dark col-md-12">
         <div class="card-header">
-          <h1>Programme 1</h1>
+          <h1>{{nom}} + id: {{id}}</h1>
           </div>
         <div class="card-body">
-          <app-entrainement></app-entrainement>
+          <app-entrainement *ngFor="let entrainement of entrainements; let i=index;"
+                              [entrainement]="entrainement"></app-entrainement>
         </div>
         <div class="card-footer">
           <app-btn-add-entrainement></app-btn-add-entrainement>
