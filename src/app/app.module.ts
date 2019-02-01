@@ -27,6 +27,9 @@ import { ModalAddSerieComponent } from './modal-add-serie/modal-add-serie.compon
 
 import { DonneesAppService } from './services/donnees-app.service';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 const appRoutes: Routes = [
@@ -60,7 +63,8 @@ const appRoutes: Routes = [
     MaterialModule,
     RouterModule.forRoot(appRoutes),
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [DonneesAppService],
   bootstrap: [AppComponent]

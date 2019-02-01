@@ -30,8 +30,15 @@ export class SeanceComponent implements OnInit {
     this.intensite = this.seance.intensite;
     this.commentaire = this.seance.commentaire;
     this.idExercice = this.seance.idExercice;
-    this.series = this.donneesAppService.getSeriesByIdSeance(this.id);
-    console.log(this.series);
+    //this.series = this.donneesAppService.getSeriesByIdSeance(this.id);
+    this.getSeries();
+    //console.log(this.series);
+  }
+
+  getSeries(): void {
+    this.donneesAppService.getSeriesByIdSeance(this.id)
+      .subscribe(series => this.series = series);
+      console.log(this.series);
   }
 
 }

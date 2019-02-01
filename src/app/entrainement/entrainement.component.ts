@@ -21,8 +21,11 @@ export class EntrainementComponent implements OnInit {
   ngOnInit() {
     this.id = this.entrainement.id;
     this.nom = this.entrainement.nom;
-    this.exercices = this.donneesAppService.getExerciceByIdEntrainement(this.id);
-    console.log("liste exercices : ", this.exercices);
+    //this.exercices = this.donneesAppService.getExerciceByIdEntrainement(this.id);
+    this.donneesAppService.getExercicesByIdEntrainement(this.id)
+      .subscribe(exercices => this.exercices = exercices);
+    //console.log("liste exercices : ", this.exercices);
+    
   }
 
 

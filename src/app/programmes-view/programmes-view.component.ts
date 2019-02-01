@@ -18,7 +18,8 @@ export class ProgrammesViewComponent implements OnInit {
   }
 
   getProgrammes(): void {
-    this.programmes = this.donneesAppService.getProgrammes();
+    this.donneesAppService.getProgrammes()
+      .subscribe(programmes => this.programmes = programmes);
   }
 
 }

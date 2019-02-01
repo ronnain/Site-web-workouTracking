@@ -13,15 +13,12 @@ export class CardExerciceComponent implements OnInit {
   id:number;
   nom:string;
   ordre:number;
-  exercices:Exercice[];
 
   constructor(private donneesAppService: DonneesAppService) { }
 
   ngOnInit() {
     this.id = this.exercice.id;
     this.nom = this.exercice.nom;
-    //this.exercices = this.donneesAppService.getExerciceByIdEntrainement(this.id);
-    //console.log("liste exercices : ", this.exercices);
   }
 
 }

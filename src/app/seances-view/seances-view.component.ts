@@ -13,6 +13,7 @@ import { DonneesAppService } from '../services/donnees-app.service';
 })
 export class SeancesViewComponent implements OnInit {
 
+  idExercice: number;
   seances:Seance[];
 
   constructor(private route: ActivatedRoute,
@@ -25,7 +26,10 @@ export class SeancesViewComponent implements OnInit {
 
   getSeances(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.seances = this.donneesAppService.getSeancesByIdExercice(id);
+    this.idExercice = id;
+    //this.seances = this.donneesAppService.getSeancesByIdExercice(id);
+    this.donneesAppService.getSeancesByIdExercice(this.idExercice)
+      .subscribe(seances => this.seances = seances);
     //console.log(this.seances);
   }
 

@@ -22,7 +22,11 @@ export class CardProgrammeComponent implements OnInit {
   ngOnInit() {
     this.id = this.programme.id;
     this.nom = this.programme.nom;
-    this.entrainements = this.donneesAppService.getEntrainementsByIdProgramme(this.id);
+    //this.entrainements = this.donneesAppService.getEntrainementsByIdProgramme(this.id);
+    this.donneesAppService.getEntrainementsByIdProgramme(this.id)
+      .subscribe(entrainements => this.entrainements = entrainements);
+    //console.log("JSON programme : " + JSON.parse(this.programme));
+    //console.log("programme : " + JSON.stringify(this.programme));
     //console.log(this.entrainements);
   }
 
